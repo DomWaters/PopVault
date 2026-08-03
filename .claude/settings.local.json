@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/c/Users/domin/OneDrive - waters-consulting.co.uk/Documents/Pop Vault/popvault-demo\" && find . -maxdepth 1 -not -path './node_modules' ; echo \"---index.html---\"; cat index.html 2>/dev/null | head -50; echo \"---package.json \\(parent\\)---\"; cat \"../package-lock.json\")",
+      "Read(//c/c/Users/domin/OneDrive - waters-consulting.co.uk/Documents/Pop Vault/popvault-demo/**)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173)",
+      "Bash(curl -s http://localhost:5173/src/screens/Questionnaire.jsx)",
+      "Bash(npx vite *)",
+      "Bash(pkill -f \"vite --port 5173\")",
+      "mcp__Claude_in_Chrome__navigate",
+      "Bash(pkill -f \"vite --port 5174\")",
+      "Bash(mkdir -p \"/c/Users/domin/OneDrive - waters-consulting.co.uk/Documents/Pop Vault/.claude\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "Bash(tasklist //FI \"PID eq 1928\")",
+      "Bash(tasklist //FI \"PID eq 48960\")",
+      "Bash(taskkill //PID 1928 //F)",
+      "Bash(taskkill //PID 48960 //F)",
+      "Bash(find \"/c/Users/domin\" -iname \"*export*\" -maxdepth 4 2>/dev/null | grep -v node_modules | head -50)",
+      "Bash(node -e ' *)",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(cd \"/c/Users/domin/OneDrive - waters-consulting.co.uk/Documents/Pop Vault\" && wc -c export.csv)",
+      "Bash(npm --version)",
+      "Bash(git --version)"
+    ]
+  }
+}
