@@ -14,7 +14,7 @@ export default function SuggestedValue() {
     <div className="flex flex-col h-full px-6 pb-10">
       <ScreenHeader title="Suggested coverage" />
 
-      <div className="flex-1 flex flex-col items-center justify-center gap-3 pb-6 text-center">
+      <div className="flex-1 flex flex-col items-center justify-center gap-3 text-center">
         <p className="text-vault-mute text-sm">We estimate your collection is worth</p>
         <p className="text-4xl font-bold text-vault-text">
           ${Number(suggestedValue ?? 0).toLocaleString()}
@@ -38,7 +38,7 @@ export default function SuggestedValue() {
         </div>
       </div>
 
-      <PrimaryButton onClick={() => navigate('questionnaire')}>
+      <PrimaryButton onClick={() => navigate('questionnaire')} className="mt-6">
         Looks right, continue
       </PrimaryButton>
     </div>

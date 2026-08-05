@@ -146,7 +146,11 @@ export default function ImportMethod() {
           )}
         </div>
 
-        <PrimaryButton disabled={!summary || selectedPortfolios.length === 0} onClick={continueWithImport}>
+        <PrimaryButton
+          disabled={!summary || selectedPortfolios.length === 0}
+          onClick={continueWithImport}
+          className="mt-6"
+        >
           Use this collection
         </PrimaryButton>
       </div>
@@ -163,7 +167,7 @@ export default function ImportMethod() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 mt-6">
         <PrimaryButton onClick={() => setStep('collectr-upload')}>
           Import from Collectr
         </PrimaryButton>

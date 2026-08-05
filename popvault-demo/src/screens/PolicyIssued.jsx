@@ -27,7 +27,9 @@ export default function PolicyIssued() {
         </p>
       </div>
 
-      <PrimaryButton onClick={() => navigate('dashboard')}>Go to my dashboard</PrimaryButton>
+      <PrimaryButton onClick={() => navigate('dashboard')} className="mt-6">
+        Go to my dashboard
+      </PrimaryButton>
     </div>
   )
 }

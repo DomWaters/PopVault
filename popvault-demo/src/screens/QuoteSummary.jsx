@@ -43,7 +43,9 @@ export default function QuoteSummary() {
         </p>
       </div>
 
-      <PrimaryButton onClick={() => navigate('bind-pay')}>Continue to bind</PrimaryButton>
+      <PrimaryButton onClick={() => navigate('bind-pay')} className="mt-6">
+        Continue to bind
+      </PrimaryButton>
     </div>
   )
 }

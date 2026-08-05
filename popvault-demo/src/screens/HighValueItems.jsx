@@ -75,7 +75,9 @@ export default function HighValueItems() {
         )}
       </div>
 
-      <PrimaryButton onClick={continueToSuggestedValue}>Continue</PrimaryButton>
+      <PrimaryButton onClick={continueToSuggestedValue} className="mt-6">
+        Continue
+      </PrimaryButton>
     </div>
   )
 }

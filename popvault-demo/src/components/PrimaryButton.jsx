@@ -1,5 +1,11 @@
 // Standard call-to-action button, used at the bottom of nearly every screen.
-export default function PrimaryButton({ children, onClick, disabled = false, variant = 'solid' }) {
+export default function PrimaryButton({
+  children,
+  onClick,
+  disabled = false,
+  variant = 'solid',
+  className = '',
+}) {
   const base =
     'w-full py-4 rounded-2xl text-[15px] font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed'
 
@@ -9,7 +15,7 @@ export default function PrimaryButton({ children, onClick, disabled = false, var
   }
 
   return (
-    <button onClick={onClick} disabled={disabled} className={`${base} ${variants[variant]}`}>
+    <button onClick={onClick} disabled={disabled} className={`${base} ${variants[variant]} ${className}`}>
       {children}
     </button>
   )

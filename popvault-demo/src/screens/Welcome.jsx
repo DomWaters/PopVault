@@ -16,7 +16,7 @@ export default function Welcome() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 mt-6">
         <PrimaryButton onClick={() => navigate('import-method')}>Get a quote</PrimaryButton>
         <PrimaryButton variant="outline" onClick={() => navigate('dashboard')}>
           I already have a policy

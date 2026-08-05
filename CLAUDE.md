@@ -46,6 +46,9 @@ There is no lint or test setup in this project.
   readout respond to questionnaire inputs.
 - `src/data/collectrSample.js` — fake payload standing in for a real
   "Collectr" import API response, plus a manual-entry fallback.
+- `BRAND.md` — brand voice, color usage rules, and styling conventions not
+  captured by Tailwind tokens (tokens themselves live in
+  `tailwind.config.js`).
 
 ## Navigation model
 

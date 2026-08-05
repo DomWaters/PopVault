@@ -60,7 +60,7 @@ export default function Questionnaire() {
     <div className="flex flex-col h-full px-6 pb-10">
       <ScreenHeader title="A few quick questions" />
 
-      <div className="flex-1 flex flex-col gap-6 pb-6 overflow-y-auto">
+      <div className="flex-1 flex flex-col gap-6 overflow-y-auto">
         <div>
           <label className="block text-vault-text text-sm font-medium mb-2">
             Where do you live?
@@ -104,7 +104,7 @@ export default function Questionnaire() {
         </div>
       </div>
 
-      <PrimaryButton disabled={!canContinue} onClick={() => navigate('quote-summary')}>
+      <PrimaryButton disabled={!canContinue} onClick={() => navigate('quote-summary')} className="mt-6">
         See my quote
       </PrimaryButton>
     </div>

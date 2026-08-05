@@ -77,7 +77,7 @@ export default function BindPay() {
         </label>
       </div>
 
-      <PrimaryButton disabled={!agreed} onClick={confirm}>
+      <PrimaryButton disabled={!agreed} onClick={confirm} className="mt-6">
         Confirm and bind
       </PrimaryButton>
     </div>
