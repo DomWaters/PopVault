@@ -23,7 +23,15 @@
       "Bash(node --input-type=module -e ' *)",
       "Bash(cd \"/c/Users/domin/OneDrive - waters-consulting.co.uk/Documents/Pop Vault\" && wc -c export.csv)",
       "Bash(npm --version)",
-      "Bash(git --version)"
+      "Bash(git --version)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\domin\\\\OneDrive - waters-consulting.co.uk\\\\Documents\\\\Pop Vault\\\\.claude\\\\agents\")",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\domin\\\\OneDrive - waters-consulting.co.uk\\\\Documents\\\\Pop Vault\\\\.claude\\\\skills\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git branch *)",
+      "Bash(npm install *)"
     ]
   }
 }
