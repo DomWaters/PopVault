@@ -2,8 +2,8 @@
 // to make the live price readout feel responsive to real inputs.
 
 const BASE_RATE = 0.008 // 0.8% of declared value
-const NAT_CAT_LOADING_RATE = { low: 0, medium: 0.1, high: 0.25 }
-const SECURITY_DISCOUNT_RATE = { display: 0, drawer: 0.05, safe: 0.15 }
+export const NAT_CAT_LOADING_RATE = { low: 0, medium: 0.1, high: 0.25 }
+export const SECURITY_DISCOUNT_RATE = { display: 0, drawer: 0.05, safe: 0.15 }
 const HIGH_VALUE_RATE = 0.015
 const MIN_ANNUAL_PREMIUM = 60
 

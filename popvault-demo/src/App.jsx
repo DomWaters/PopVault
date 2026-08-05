@@ -9,6 +9,7 @@ import QuoteSummary from './screens/QuoteSummary.jsx'
 import BindPay from './screens/BindPay.jsx'
 import PolicyIssued from './screens/PolicyIssued.jsx'
 import Dashboard from './screens/Dashboard.jsx'
+import AskAi from './screens/AskAi.jsx'
 
 // Maps the `screen` state value to the component that renders it.
 // This is the only place that needs updating when a screen is added.
@@ -22,6 +23,7 @@ const SCREEN_MAP = {
   'bind-pay': BindPay,
   'policy-issued': PolicyIssued,
   dashboard: Dashboard,
+  'ask-ai': AskAi,
 }
 
 function PhoneFrame() {

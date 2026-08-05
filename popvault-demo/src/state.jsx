@@ -13,6 +13,7 @@ export const SCREENS = [
   'bind-pay',
   'policy-issued',
   'dashboard',
+  'ask-ai',
 ]
 
 const AppStateContext = createContext(null)

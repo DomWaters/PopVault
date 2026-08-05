@@ -4,7 +4,7 @@ import ScreenHeader from '../components/ScreenHeader.jsx'
 const QUICK_ACTIONS = [
   { icon: '📦', label: 'Collection' },
   { icon: '📝', label: 'File a claim' },
-  { icon: '💬', label: 'Ask AI' },
+  { icon: '💬', label: 'Ask AI', screen: 'ask-ai' },
 ]
 
 export default function Dashboard() {
@@ -38,7 +38,9 @@ export default function Dashboard() {
           {QUICK_ACTIONS.map((action) => (
             <button
               key={action.label}
-              className="flex flex-col items-center gap-1.5 bg-vault-panel border border-vault-line rounded-2xl py-4 text-vault-mute active:bg-vault-card"
+              onClick={action.screen ? () => navigate(action.screen) : undefined}
+              disabled={!action.screen}
+              className="flex flex-col items-center gap-1.5 bg-vault-panel border border-vault-line rounded-2xl py-4 text-vault-mute active:bg-vault-card disabled:opacity-50 disabled:cursor-default"
             >
               <span className="text-xl">{action.icon}</span>
               <span className="text-[11px]">{action.label}</span>
@@ -46,7 +48,7 @@ export default function Dashboard() {
           ))}
         </div>
         <p className="text-vault-mute text-[11px] text-center -mt-2">
-          Quick actions are illustrative only in this demo.
+          Collection and File a claim are illustrative only in this demo.
         </p>
       </div>
 
