@@ -9,8 +9,7 @@ export default function ClaimSubmitted() {
   const backToDashboard = () => {
     update({
       claim: {
-        itemLabel: null,
-        itemValue: null,
+        items: [],
         incidentType: null,
         dateOfLoss: null,
         description: null,

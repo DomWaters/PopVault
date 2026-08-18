@@ -11,20 +11,26 @@ export default function ClaimItem() {
     id: `${row.portfolio}-${row.product}-${index}`,
   }))
 
-  const [selectedId, setSelectedId] = useState(null)
-  const [manualLabel, setManualLabel] = useState(state.claim.itemLabel ?? '')
+  const [selectedIds, setSelectedIds] = useState([])
+  const [manualLabel, setManualLabel] = useState(state.claim.items[0]?.label ?? '')
 
-  const selectedItem = items.find((item) => item.id === selectedId)
-  const canContinue = items.length > 0 ? Boolean(selectedItem) : manualLabel.trim().length > 0
+  const toggleItem = (id) => {
+    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]))
+  }
+
+  const canContinue = items.length > 0 ? selectedIds.length > 0 : manualLabel.trim().length > 0
 
   const continueToIncident = () => {
     if (items.length > 0) {
+      const selectedItems = items.filter((item) => selectedIds.includes(item.id))
       updateSlice('claim', {
-        itemLabel: selectedItem.product,
-        itemValue: selectedItem.quantity * selectedItem.price,
+        items: selectedItems.map((item) => ({
+          label: item.product,
+          value: item.quantity * item.price,
+        })),
       })
     } else {
-      updateSlice('claim', { itemLabel: manualLabel.trim(), itemValue: null })
+      updateSlice('claim', { items: [{ label: manualLabel.trim(), value: null }] })
     }
     navigate('claim-incident')
   }
@@ -39,15 +45,16 @@ export default function ClaimItem() {
         {items.length > 0 ? (
           <div className="flex flex-col gap-2">
             {items.map((item) => (
-              <button
+              <label
                 key={item.id}
-                onClick={() => setSelectedId(item.id)}
-                className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-left border transition-colors ${
-                  selectedId === item.id
-                    ? 'bg-vault-purple/10 border-vault-purple'
-                    : 'bg-vault-panel border-vault-line'
-                }`}
+                className="flex items-center gap-3 bg-vault-panel border border-vault-line rounded-2xl px-4 py-3 cursor-pointer"
               >
+                <input
+                  type="checkbox"
+                  checked={selectedIds.includes(item.id)}
+                  onChange={() => toggleItem(item.id)}
+                  className="w-4 h-4 accent-vault-purple shrink-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-vault-text text-sm truncate">{item.product}</p>
                   <p className="text-vault-mute text-xs">
@@ -57,7 +64,7 @@ export default function ClaimItem() {
                 <span className="text-vault-text text-sm font-semibold whitespace-nowrap">
                   ${item.price.toLocaleString()}
                 </span>
-              </button>
+              </label>
             ))}
           </div>
         ) : (

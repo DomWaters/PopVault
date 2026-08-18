@@ -54,8 +54,7 @@ const initialState = {
   billingPlan: 'annual', // 'annual' | 'monthly'
   policyNumber: null,
   claim: {
-    itemLabel: null,
-    itemValue: null,
+    items: [], // [{ label, value }] — one or more items being claimed for
     incidentType: null, // 'lost' | 'stolen' | 'damaged' | 'other'
     dateOfLoss: null,
     description: null,

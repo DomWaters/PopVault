@@ -16,7 +16,9 @@ function generateClaimNumber() {
 
 export default function ClaimReview() {
   const { state, navigate, updateSlice } = useAppState()
-  const { itemLabel, itemValue, incidentType, dateOfLoss, description } = state.claim
+  const { items, incidentType, dateOfLoss, description } = state.claim
+
+  const totalValue = items.reduce((sum, item) => sum + (item.value ?? 0), 0)
 
   const submit = () => {
     updateSlice('claim', { claimNumber: generateClaimNumber() })
@@ -29,10 +31,25 @@ export default function ClaimReview() {
 
       <div className="flex-1 flex flex-col gap-3 overflow-y-auto">
         <div className="bg-vault-panel border border-vault-line rounded-2xl px-5 py-4">
-          <p className="text-vault-mute text-xs">Item</p>
-          <p className="text-vault-text text-sm font-medium mt-1">{itemLabel}</p>
-          {itemValue != null && (
-            <p className="text-vault-mute text-xs mt-1">${itemValue.toLocaleString()}</p>
+          <p className="text-vault-mute text-xs">
+            {items.length} item{items.length === 1 ? '' : 's'}
+          </p>
+          <div className="flex flex-col gap-1 mt-1">
+            {items.map((item, index) => (
+              <div key={`${item.label}-${index}`} className="flex items-center justify-between">
+                <p className="text-vault-text text-sm font-medium truncate">{item.label}</p>
+                {item.value != null && (
+                  <span className="text-vault-mute text-xs whitespace-nowrap">
+                    ${item.value.toLocaleString()}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+          {totalValue > 0 && (
+            <p className="text-vault-text text-sm font-semibold mt-2">
+              Total ${totalValue.toLocaleString()}
+            </p>
           )}
         </div>
 
