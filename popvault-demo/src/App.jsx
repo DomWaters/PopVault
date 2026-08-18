@@ -46,7 +46,7 @@ function PhoneFrame() {
       <div className="phone-screen">
         <div className="screen-scroll">
           {/* key={state.screen} forces remount on navigation, which retriggers the fade-in animation */}
-          <div key={state.screen} className="screen-enter min-h-full">
+          <div key={state.screen} className="screen-enter h-full">
             <Screen />
           </div>
         </div>

@@ -59,6 +59,17 @@ html, body {
   display: none;
 }
 
+/* Same treatment for the scrollable regions inside individual screens
+   (item lists, chat log, etc.) so no scrollbar chrome ever appears
+   inside the phone frame. */
+.overflow-y-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+
 /* simple fade/slide transition between screens */
 .screen-enter {
   animation: screenIn 0.28s ease-out;
