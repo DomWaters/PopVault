@@ -10,6 +10,11 @@ import BindPay from './screens/BindPay.jsx'
 import PolicyIssued from './screens/PolicyIssued.jsx'
 import Dashboard from './screens/Dashboard.jsx'
 import AskAi from './screens/AskAi.jsx'
+import ClaimItem from './screens/ClaimItem.jsx'
+import ClaimIncident from './screens/ClaimIncident.jsx'
+import ClaimReview from './screens/ClaimReview.jsx'
+import ClaimSubmitted from './screens/ClaimSubmitted.jsx'
+import CollectionView from './screens/CollectionView.jsx'
 
 // Maps the `screen` state value to the component that renders it.
 // This is the only place that needs updating when a screen is added.
@@ -24,6 +29,11 @@ const SCREEN_MAP = {
   'policy-issued': PolicyIssued,
   dashboard: Dashboard,
   'ask-ai': AskAi,
+  'claim-item': ClaimItem,
+  'claim-incident': ClaimIncident,
+  'claim-review': ClaimReview,
+  'claim-submitted': ClaimSubmitted,
+  'collection-view': CollectionView,
 }
 
 function PhoneFrame() {

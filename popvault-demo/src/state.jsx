@@ -14,6 +14,11 @@ export const SCREENS = [
   'policy-issued',
   'dashboard',
   'ask-ai',
+  'claim-item',
+  'claim-incident',
+  'claim-review',
+  'claim-submitted',
+  'collection-view',
 ]
 
 const AppStateContext = createContext(null)
@@ -48,6 +53,14 @@ const initialState = {
   },
   billingPlan: 'annual', // 'annual' | 'monthly'
   policyNumber: null,
+  claim: {
+    itemLabel: null,
+    itemValue: null,
+    incidentType: null, // 'lost' | 'stolen' | 'damaged' | 'other'
+    dateOfLoss: null,
+    description: null,
+    claimNumber: null,
+  },
 }
 
 export function AppStateProvider({ children }) {

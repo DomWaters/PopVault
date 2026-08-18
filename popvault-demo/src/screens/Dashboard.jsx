@@ -2,8 +2,8 @@ import { useAppState } from '../state.jsx'
 import ScreenHeader from '../components/ScreenHeader.jsx'
 
 const QUICK_ACTIONS = [
-  { icon: '📦', label: 'Collection' },
-  { icon: '📝', label: 'File a claim' },
+  { icon: '📦', label: 'Collection', screen: 'collection-view' },
+  { icon: '📝', label: 'File a claim', screen: 'claim-item' },
   { icon: '💬', label: 'Ask AI', screen: 'ask-ai' },
 ]
 
@@ -47,9 +47,6 @@ export default function Dashboard() {
             </button>
           ))}
         </div>
-        <p className="text-vault-mute text-[11px] text-center -mt-2">
-          Collection and File a claim are illustrative only in this demo.
-        </p>
       </div>
 
       <button onClick={restart} className="mt-auto text-vault-mute text-xs underline">
